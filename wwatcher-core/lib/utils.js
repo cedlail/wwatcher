@@ -21,7 +21,7 @@ console.ex = exceptionLogger;
 
 function Exception(code) {
     this.code = code;
-    this.message = _("ex.error." + code.toLowerCase());
+    this.message = __("ex.error." + code.toLowerCase());
 }
 function newEx(exCode) {
     return new Exception(exCode);
