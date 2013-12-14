@@ -1,0 +1,42 @@
+<div style="font-size: 14px; line-height: 14px; vertical-align: middle;">
+    <span style="position: relative; top: -5px;">Url :</span>
+    <div style="background-color: #ffffff; padding: 2px 5px; border: 1px solid; border-radius: 3px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; display: inline-block; margin-top: 5px; max-width: calc(100% - 125px);">
+        <a href="{{{url}}}" target="_blank" style="">{{url}}</a>
+    </div>
+</div>
+<table>
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Catégorie</th>
+        <th>Libellé</th>
+        <th>Date</th>
+        <th>Taille</th>
+        <th>C</th>
+        <th>S</th>
+        <th>L</th>
+    </tr>
+    </thead>
+    <tbody>
+{{#results}}
+    <tr>
+        <td>
+            <a href="http://www.t411.me/torrents/download/?id={{id}}" target="_blank">
+                {{id}}
+            </a>
+        </td>
+        <td>{{catLabel}}</td>
+        <td style="white-space: nowrap; text-overflow: ellipsis; overflow: hidden;">
+            <a href="{{{url}}}" target="_blank">
+                {{label}}
+            </a>
+        </td>
+        <td style="text-align: center;">{{{toDate date}}}</td>
+        <td style="text-align: right;">{{size}}</td>
+        <td style="text-align: right;">{{completed}}</td>
+        <td style="text-align: right;">{{seeders}}</td>
+        <td style="text-align: right;">{{leechers}}</td>
+    </tr>
+{{/results}}
+    </tbody>
+</table>

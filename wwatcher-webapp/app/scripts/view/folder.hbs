@@ -1,0 +1,34 @@
+<div class="inline pagePart folder">
+    <div class="container">
+        <div id="btnUpdateAll" class="folderUpdate button icone24 green">Rafraichir</div><br/>
+        <b>Etat</b>
+        <select id="filterState">
+            <option value="N">Nouveau</option>
+            <option value="N,V">Tous</option>
+            <option value="F">A suivre</option>
+            <option value="A">Archivé</option>
+        </select>
+        <br/><br/>
+        {{#each urls}}
+            <div id="url_{{id}}" class="urlItem no-select">
+                {{label}} ({{unreadCount}})
+                <div class="actionBar">
+                    <div class="update"></div>
+                    <div class="edit"></div>
+                    <div class="enable"></div>
+                    <div class="remove"></div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
+<div class="inline vsep sepFolder"></div>
+<div class="inline pagePart list">
+    <div class="container">
+    </div>
+</div>
+<div class="inline vsep sepList"></div>
+<div class="inline pagePart document">
+    <div class="selectable container">
+    </div>
+</div>

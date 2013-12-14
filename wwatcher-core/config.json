@@ -1,0 +1,66 @@
+{
+    "env": "dev",
+    "database": {
+        "testM": {
+            "database": "",
+            "user": "",
+            "password": "",
+            "options": {
+                "dialect": "sqlite",
+                "logging": false,
+                "storage": ":memory:"
+            }
+        },
+        "test": {
+            "database": "",
+            "user": "",
+            "password": "",
+            "options": {
+                "dialect": "sqlite",
+                "logging": false,
+                "storage": "database.db",
+                "sync": { "force": true }
+            }
+        },
+        "dev": {
+            "database": "",
+            "user": "",
+            "password": "",
+            "options": {
+                "dialect": "sqlite",
+                "storage": "database.db",
+                "logging": false
+            }
+        },
+        "prod": {
+            "database": "",
+            "user": "",
+            "password": "",
+            "options": {
+                "dialect": "sqlite",
+                "storage": "database.db",
+                "logging": false
+            }
+        }
+    },
+    "http": {
+        "dev": {
+            "port": 80,
+            "staticPath": "../../wwatcher-webapp/app",
+            "restKey": "6581064-654645-9879790654-1087601",
+            "restContext": "/rest"
+        },
+        "test": {
+            "port": 3001,
+            "staticPath": "../../wwatcher-webapp/www",
+            "restKey": "6581064-654645-9879790654-1087601",
+            "restContext": "/rest"
+        },
+        "prod": {
+            "port": 3000,
+            "staticPath": "../www",
+            "restKey": "6581064-654645-9879790654-1087601",
+            "restContext": "/rest"
+        }
+    }
+}

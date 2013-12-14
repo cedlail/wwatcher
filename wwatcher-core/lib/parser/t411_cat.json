@@ -1,0 +1,35 @@
+{
+    "395": { "label": "Audio" },
+    "404": { "label": "eBook" },
+    "340": { "label": "Emulation" },
+    "624": { "label": "Jeu vidéo" },
+    "392": { "label": "GPS" },
+    "233": {
+        "label": "Application",
+        "subcat": {
+            "234": "Linux",
+            "235": "MacOS",
+            "236": "Windows",
+            "625": "Smartphone",
+            "627": "Tablette",
+            "638": "Formation",
+            "629": "Autre"
+        }
+    },
+    "210": {
+        "label": "Film/Vidéo",
+        "subcat": {
+            "455": "Animation",
+            "637": "Animation Série",
+            "633": "Concert",
+            "634": "Documentaire",
+            "639": "Emission TV",
+            "631": "Film",
+            "433": "Série TV",
+            "635": "Spectacle",
+            "636": "Sport",
+            "402": "Vidéo-clips"
+        }
+    },
+    "456": { "label": "xXx" }
+}

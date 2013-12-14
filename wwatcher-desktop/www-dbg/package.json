@@ -1,0 +1,15 @@
+{
+    "name": "WWatcher - Web Watcher",
+    "main": "index.html",
+    "window": {
+        "show": true,
+        "icon": "favicon.ico",
+        "toolbar": true, // debug
+        "frame": true,
+        "width": 1024,
+        "height": 768,
+        "position": "center",
+        "min_width": 640,
+        "min_height": 480 //,
+    }
+}

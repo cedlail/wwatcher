@@ -1,0 +1,38 @@
+<label for="selectCa">Catégorie : </label>
+<select id="selectCat" name="c" style="min-width: 100px;">
+    <option value=""></option>
+{{#categs}}
+    <option value="{{value}}">{{label}}</option>
+{{/categs}}
+</select>
+{{#categs}}
+    {{#if subcat}}
+<select id="subcat{{value}}" name="s" style="min-width: 50px; display: none;" disabled>
+    <option value=""></option>
+    {{#each subcat}}
+        <option value="{{@key}}">{{this}}</option>
+        {{log  this}}
+    {{/each}}
+</select>
+    {{/if}}
+{{/categs}}
+<script>
+    var selCat = $("select#selectCat");
+    function catChanged(event) {
+        var cat = selCat.val(), selSubCat;
+        // Hide all
+        $("[name='s']").hide().prop({disabled: true});
+        // Show
+        selSubCat = $("#subcat" + cat);
+        if (selSubCat.length === 1) {
+            selSubCat.prop({disabled: false}).show();
+            selSubCat.val({{s}});
+        }
+    }
+    selCat.change(catChanged).val({{c}});
+    catChanged(undefined);
+</script>
+<br/>
+<label for="search">Rechercher : </label>
+<input type="text" id="search" name="q" value="{{q}}" placeholder="Rechercher" size="100"
+       style="display: inline-block; width: calc(100% - 200px)"/>

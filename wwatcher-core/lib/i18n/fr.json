@@ -1,0 +1,50 @@
+{
+    "cli.help.title": "WWatcher : Surveillance de contenu internet. HTTP/RSS",
+    "cli.help.usage": "Usage : wwa commande [options]",
+    "cli.help.command.title": "Commandes :",
+    "cli.help.command.list":    "   list       Liste les éléments non lus.",
+    "cli.help.command.update":  "   update     Lance la mise à jour.",
+    "cli.help.options.env": "Sélection envirronnement.",
+    "cli.help.options.help": "Affiche cette aide.",
+    "cli.help.options.force": "Mode force.",
+    "cli.error.nocommand": "Aucune commande spécifiée.",
+    "cli.error.command.unknow": "",
+    "cli.env.select": "Sélection environnement : %s",
+    "cli.parser.list.noparser": "Aucun parser défini",
+    "cli.server.status": "Http serveur status : %s",
+
+    "server.static.init": "Http serveur initialisé pour le chemin : %s",
+    "server.mngt.restinit": "Création route service de gestion du serveur.",
+    "server.stop.sendrequest": "Envoi de la demande d'arret du serveur.",
+    "server.stop.request": "Demande d'arret du serveur.",
+    "server.stop.countdown": "Arret du server dans %ss",
+    "server.stop.force": "Arret forcé du serveur.",
+    "server.stop.ok": "Arret du serveur terminé.",
+    "server.add.restroute": "Création route service rest :  %s\t  %s ",
+    "server.start.message": "Démarrage du serveur sur le port %s",
+
+    "parser.jquery.name": "Lecteur simple jQuery",
+    "parser.jquery.form.contentselector": "Sélecteur jquery",
+    "parser.jquery.form.idField": "Id",
+    "parser.jquery.form.itemFields": "Champ personnalisé",
+    "parser.jquery.form.item.name": "Nom du champ",
+    "parser.jquery.form.item.selector": "Selecteur jquery du champ",
+    "parser.jquery.form.item.fn": "jQuery fonction",
+    "parser.jquery.form.item.fnArg": "jQuery fonction argument",
+
+    "parser.nodejsversion.label": "Lecture version NodeJs",
+    "parser.nodejsversion.description": "Extrait la version actuelle de la page d'accueil de NodeJs",
+
+    "parser.t411.label": "Recherche sur T411",
+    "parser.t411.description": "Effecture des recherche sur t411",
+
+    "urlitem.state.new": "Nouveau",
+    "urlitem.state.view": "Vu",
+    "urlitem.state.archived": "Archivé",
+    "urlitem.state.follow": "A Suivre",
+
+    "ex.error.title": "Une erreur c'est produite : ",
+    "ex.error.cli_unknow_command": "Commande inconnue",
+    "ex.error.unknow_parser": "Parser inconnu"
+
+}

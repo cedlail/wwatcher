@@ -1,0 +1,29 @@
+<section class="search-criteria">
+    <div class="selectable container" style="display:none;">
+        <div class="container-wrapper">
+            <!-- Parser select -->
+            <label for="selectParser">Parser : </label>
+            <select id="selectParser">
+                <option value="">Sélectionnez un parser</option>
+                {{#parsers}}
+                    <option value="{{name}}">{{label}}</option>
+                {{/parsers}}
+            </select><!-- Restaure selected item --><script>$("#selectParser").val("{{parser}}");</script>
+            <!-- Parser Search Form -->
+            <form id="parserSearchForm" class="parserSearchForm" style="display:none;">
+            </form>
+            <div class="searchButton">
+                <div id="search-start" class="parserSearchForm button green" style="display:none;">
+                    Lancer
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="hsep sepFolder sepFixed" style="display: none;"></div>
+<section class="search-result-container container" style="display: none;" >
+    <div id="search-save" class="button green" style="display:none;">Suivre</div>
+    <!-- Parser search result -->
+    <div class="search-result selectable container-wrapper">
+    </div>
+</section>

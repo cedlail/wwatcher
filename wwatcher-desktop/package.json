@@ -1,0 +1,19 @@
+{
+  "name": "wwatcher",
+  "version": "0.0.0",
+  "description": "Web Watcher Desktop",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test/test.js"
+  },
+  "keywords": [
+    "web",
+    "automation"
+  ],
+  "author": "Laillet Cédric",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "jsdom": "~0.8.9",
+    "sqlite3": "~2.1.19"
+  }
+}
