@@ -326,6 +326,18 @@ ServerService = (function () {
          ***    REST
          ******************************************************************************/
 
+        var startWithRestContext = new RegExp("^"+options.restContext, "i");
+        app.use(
+            function(req, res, next){
+                if (startWithRestContext.test(req.url)) {
+                    res.setHeader("Cache-Control","no-cache, no-store, must-revalidate");
+                    res.setHeader("Pragma","no-cache");
+                    res.setHeader("Expires","Thu, 01 Dec 1994 16:00:00 GMT");
+                }
+                next();
+            }
+        );
+
         restOptions = {
             discoverPath: "discover",
             //protoPath: "proto",
