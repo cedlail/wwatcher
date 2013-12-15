@@ -9,7 +9,8 @@
 "use strict";
 
 var // Constants
-    DEFAULT_SERVER_PORT = 3000,
+    DEFAULT_SERVER_PORT = process.env.PORT || 3000,
+    DEFAULT_SERVER_IP = process.env.IP || "0.0.0.0",
     DEBUG_ENABLE = false,
     DEBUG_VERBOSE = false,
     // Node Modules
@@ -366,10 +367,11 @@ ServerService = (function () {
 
         // Start the server
         options.port = options.port || DEFAULT_SERVER_PORT;
-        server = http.createServer(app).listen(options.port);
+        options.ip = options.ip || DEFAULT_SERVER_IP;
+        server = http.createServer(app).listen(options.port, options.ip);
 
         status = statusEnum.STARTED;
-        console.log(__("server.start.message"), options.port);
+        console.log(__("server.start.message"), options.ip, options.port);
     }
 
     function stop(force, options, callback) {

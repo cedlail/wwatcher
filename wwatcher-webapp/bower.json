@@ -4,7 +4,9 @@
   "dependencies": {
     "modernizr": "~2.6.2",
     "jquery": "~1.10.2",
-    "handlebars": "~1.0.0"
+    "handlebars": "~1.0.0",
+    "almond": "~0.2.7",
+    "jquery-ui": "~1.10.3"
   },
   "devDependencies": {}
 }

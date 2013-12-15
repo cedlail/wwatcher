@@ -21,7 +21,7 @@
     "server.stop.force": "Arret forcé du serveur.",
     "server.stop.ok": "Arret du serveur terminé.",
     "server.add.restroute": "Création route service rest :  %s\t  %s ",
-    "server.start.message": "Démarrage du serveur sur le port %s",
+    "server.start.message": "Démarrage du serveur sur %s:%s",
 
     "parser.jquery.name": "Lecteur simple jQuery",
     "parser.jquery.form.contentselector": "Sélecteur jquery",

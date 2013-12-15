@@ -11,7 +11,8 @@ var path = require("path");
 
 var APP_CONFIG_FILENAME = "config.json",
     APP_NAME = "WWatcher",// TODO : A lire dans package.json
-    DEFAULT_SERVER_PORT = 80,
+    DEFAULT_SERVER_PORT = process.env.PORT,
+    DEFAULT_SERVER_IP = process.env.IP,
     DEFAULT_REST_KEY = "6581064-654645-9879790654-1087601",
     DEFAULT_REST_CONTEXT = "/rest",
 
@@ -35,6 +36,7 @@ var APP_CONFIG_FILENAME = "config.json",
         },
         http: {
             prod: {
+                ip: DEFAULT_SERVER_IP,
                 port: DEFAULT_SERVER_PORT,
                 staticPath: "../www",
                 restKey: DEFAULT_REST_KEY,
@@ -179,7 +181,10 @@ function getDatabase(env) {
  */
 function getHttp(env) {
     initConfig(env);
-    return appConfig.http[env || appConfig.env];
+    var httpConfig = appConfig.http[env || appConfig.env];
+    httpConfig.ip = httpConfig.ip || DEFAULT_SERVER_IP;
+    httpConfig.port = httpConfig.port || DEFAULT_SERVER_PORT;
+    return httpConfig;
 }
 
 //select();

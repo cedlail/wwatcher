@@ -25,7 +25,6 @@
   },
   "dependencies": {
     "pg": "~2.6.2",
-    "oracle": "~0.3.4",
     "sequelize": "~2.0.0-beta.0",
     "sqlite3": "~2.1.17",
     "q": "~0.9.7",
