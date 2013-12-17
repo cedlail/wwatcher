@@ -27,18 +27,6 @@ module.exports = function (grunt) {
     grunt.initConfig({
         yeoman: yeomanConfig,
         watch: {
-            coffee: {
-                files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
-                tasks: ['coffee:dist']
-            },
-            coffeeTest: {
-                files: ['test/spec/{,*/}*.coffee'],
-                tasks: ['coffee:test']
-            },
-            compass: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-                tasks: ['compass:server', 'autoprefixer']
-            },
             styles: {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
                 tasks: ['copy:styles', 'autoprefixer']
@@ -122,62 +110,9 @@ module.exports = function (grunt) {
                 'test/spec/{,*/}*.js'
             ]
         },
-        mocha: {
-            all: {
-                options: {
-                    run: true,
-                    urls: ['http://localhost:<%= connect.options.port %>/index.html']
-                }
-            }
-        },
-//        coffee: {
-//            dist: {
-//                files: [{
-//                    expand: true,
-//                    cwd: '<%= yeoman.app %>/scripts',
-//                    src: '{,*/}*.coffee',
-//                    dest: '.tmp/scripts',
-//                    ext: '.js'
-//                }]
-//            },
-//            test: {
-//                files: [{
-//                    expand: true,
-//                    cwd: 'test/spec',
-//                    src: '{,*/}*.coffee',
-//                    dest: '.tmp/spec',
-//                    ext: '.js'
-//                }]
-//            }
-//        },
-        compass: {
-            options: {
-                sassDir: '<%= yeoman.app %>/styles',
-                cssDir: '.tmp/styles',
-                generatedImagesDir: '.tmp/images/generated',
-                imagesDir: '<%= yeoman.app %>/images',
-                javascriptsDir: '<%= yeoman.app %>/scripts',
-                fontsDir: '<%= yeoman.app %>/styles/fonts',
-                importPath: '<%= yeoman.app %>/bower_components',
-                httpImagesPath: '/images',
-                httpGeneratedImagesPath: '/images/generated',
-                httpFontsPath: '/styles/fonts',
-                relativeAssets: false
-            },
-            dist: {
-                options: {
-                    generatedImagesDir: '<%= yeoman.dist %>/images/generated'
-                }
-            },
-            server: {
-                options: {
-                    debugInfo: true
-                }
-            }
-        },
         autoprefixer: {
             options: {
-                browsers: ['last 1 version']
+                browsers: ['last 2 version']
             },
             dist: {
                 files: [{
@@ -299,7 +234,8 @@ module.exports = function (grunt) {
                         '*.{ico,png,txt}',
                         '.htaccess',
                         'images/{,*/}*.{webp,gif}',
-                        'styles/fonts/{,*/}*.*'
+                        'styles/fonts/{,*/}*.*',
+                        'styles/images/{,*/}*.*'
                     ]
                 }]
             },
@@ -309,32 +245,27 @@ module.exports = function (grunt) {
                 cwd: '<%= yeoman.app %>/styles',
                 dest: '.tmp/styles/',
                 src: '{,*/}*.css'
+            },
+            "jquery-ui": {
+                expand: true,
+                dot: true,
+                cwd: '<%= yeoman.app %>/bower_components/jquery-ui/themes/eggplant/images',
+                dest: '<%= yeoman.dist %>/styles/images',
+                src: '{,*/}*.*'
             }
-        },
-        modernizr: {
-            devFile: '<%= yeoman.app %>/bower_components/modernizr/modernizr.js',
-            outputFile: '<%= yeoman.dist %>/bower_components/modernizr/modernizr.js',
-            files: [
-                '<%= yeoman.dist %>/scripts/{,*/}*.js',
-                '<%= yeoman.dist %>/styles/{,*/}*.css',
-                '!<%= yeoman.dist %>/scripts/vendor/*'
-            ],
-            uglify: true
         },
         concurrent: {
             server: [
-                'compass',
-                'coffee:dist',
-                'copy:styles'
+                'copy:styles',
+                'copy:jquery-ui'
             ],
             test: [
-                'coffee',
-                'copy:styles'
+                'copy:styles',
+                'copy:jquery-ui'
             ],
             dist: [
-//                'coffee',
-                'compass',
                 'copy:styles',
+                'copy:jquery-ui',
                 'imagemin',
                 'svgmin',
                 'htmlmin'
@@ -378,8 +309,7 @@ module.exports = function (grunt) {
         'clean:server',
         'concurrent:test',
         'autoprefixer',
-        'connect:test',
-        'mocha'
+        'connect:test'
     ]);
 
     grunt.registerTask('build', [
@@ -391,7 +321,6 @@ module.exports = function (grunt) {
         'concat',
         'cssmin',
         'uglify',
-        'modernizr',
         'copy:dist',
         'rev',
         'usemin'

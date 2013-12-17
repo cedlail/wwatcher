@@ -5,7 +5,6 @@
 // TODO : getstatus => sans keep-alive (http => request.connection.destroy();)
 // TODO : server.start => Stockage / env du port... ex : ${envFolder}\server.json
 
-
 "use strict";
 
 var // Constants
